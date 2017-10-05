@@ -1,0 +1,40 @@
+group 'com.mentoring'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE")
+    }
+
+}
+
+dependencies {
+    /* SPRING */
+    compile("org.springframework.boot:spring-boot-starter-integration")
+    compile("org.springframework.boot:spring-boot-starter-activemq")
+    compile("org.springframework.integration:spring-integration-file")
+    /* LOGGING */
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    /* UTILITY */
+    providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+}
+
+war {
+    archiveName 'spring-integration-project.war'
+}
