@@ -55,6 +55,13 @@ public class IntegrationConfiguration {
         return new DirectChannel();
     }
 
+    /**
+     * Consumes messages from IP_ADDRESS_QUEUE and populates ipChannel
+     *
+     * @return IntegrationFlow - the central component of the Spring Integration Java DSL.
+     * The IntegrationFlow is a Consumer functional interface,
+     * so we can minimize our code and concentrate just only on the integration scenario requirements.
+     */
     @Bean
     public IntegrationFlow jmsInboundIntegrationFlow() {
         return IntegrationFlows.from(Jms.messageDrivenChannelAdapter(jmsConnectionFactory)
@@ -63,6 +70,10 @@ public class IntegrationConfiguration {
                 .get();
     }
 
+    /**
+     * Consumes messages from ipChannel, transforms the payload using defined @Transformer,
+     * and populates locationChannel
+     */
     @Bean
     public IntegrationFlow geolocationFlow() {
         return IntegrationFlows.from(ipChannel())
@@ -71,6 +82,9 @@ public class IntegrationConfiguration {
                 .get();
     }
 
+    /**
+     * Consumes messages from locationChannel and sends them to LOCATION_QUEUE
+     */
     @Bean
     public IntegrationFlow jmsOutboundIntegrationFlow() {
         return IntegrationFlows.from("locationChannel")
