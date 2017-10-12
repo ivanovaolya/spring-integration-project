@@ -29,11 +29,14 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-integration")
     compile("org.springframework.boot:spring-boot-starter-activemq")
     compile("org.springframework.integration:spring-integration-file")
+    compile("org.springframework.integration:spring-integration-jms")
+    compile("org.springframework:spring-web")
     compile group: 'org.springframework.integration', name: 'spring-integration-zip', version: '1.0.0.RELEASE'
     /* LOGGING */
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     /* UTILITY */
     providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+    compile("com.fasterxml.jackson.core:jackson-databind")
 }
 
 war {
