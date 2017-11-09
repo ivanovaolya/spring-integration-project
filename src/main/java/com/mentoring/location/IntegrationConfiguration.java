@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.IntegrationComponentScan;
 import org.springframework.integration.annotation.Transformer;
 import org.springframework.integration.channel.DirectChannel;
-import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.jms.Jms;
@@ -30,7 +29,6 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @IntegrationComponentScan
 @EnableJms
-@EnableIntegration
 public class IntegrationConfiguration {
 
     @Autowired

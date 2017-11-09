@@ -17,7 +17,6 @@ import org.springframework.integration.file.filters.SimplePatternFileListFilter;
 import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.zip.transformer.UnZipTransformer;
 import org.springframework.integration.zip.transformer.ZipResultType;
-import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 
 /**
