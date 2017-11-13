@@ -37,9 +37,9 @@ public class IntegrationConfiguration {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private static final String IP_ADDRESS_QUEUE = "ip.queue";
+    protected static final String IP_ADDRESS_QUEUE = "ip.queue";
 
-    private static final String LOCATION_QUEUE = "location.queue";
+    protected static final String LOCATION_QUEUE = "location.queue";
 
     private Logger logger = LoggerFactory.getLogger(IntegrationConfiguration.class);
 
